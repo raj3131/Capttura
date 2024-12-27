@@ -1,0 +1,76 @@
+/* Footer Styles */
+.footer {
+  background: #2c2c2c; /* Dark background for contrast */
+  color: white;
+  padding: 20px 40px; /* Added more padding for better spacing */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2); /* Shadow for effect */
+  width: 100%; /* Ensures footer spans the full width */
+  box-sizing: border-box; /* Includes padding and border in the element's total width */
+}
+
+.footer .contact-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: #ff6666; /* Light red accent */
+}
+
+.footer .contact-info .highlight {
+  color: #ff0000; /* Bright red for the brand name */
+  font-weight: bold;
+}
+
+.footer .social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly; /* Spread out the icons across the width */
+  gap: 20px;
+  flex-wrap: wrap; /* Allows icons to wrap if they don't fit in one line */
+}
+
+.footer .social-links a {
+  color: white;
+  font-size: 1.5rem; /* Increased icon size */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer .social-links a i {
+  font-size: 1.8rem; /* Larger icon size for better visibility */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+  color: #ff0000; /* Bright red on hover */
+}
+
+.footer .social-links a:hover i {
+  transform: scale(1.2); /* Enlarge icons slightly on hover */
+  color: #ff6666; /* Softer red for icons */
+}
+
+.footer .social-links a:active {
+  transform: scale(1.1); /* Slightly reduce scaling when clicked */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .footer .social-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Center the icons on smaller screens */
+  }
+  
+  .footer .social-links a {
+    font-size: 1.3rem; /* Adjust icon size for mobile */
+  }
+  
+  .footer .contact-info p {
+    font-size: 0.9rem; /* Adjust text size for mobile */
+  }
+}
