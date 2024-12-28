@@ -8,7 +8,8 @@ function Header() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false); // State to toggle the menu visibility
 
-  // Function to handle the scroll event
+// Adding the scroll event listener on component mount
+useEffect(() => {
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
     if (currentScrollY > lastScrollY) {
@@ -19,13 +20,11 @@ function Header() {
     setLastScrollY(currentScrollY); // Update last scroll position
   };
 
-  // Adding the scroll event listener on component mount
- useEffect(() => {
   window.addEventListener('scroll', handleScroll);
   return () => {
     window.removeEventListener('scroll', handleScroll);
   };
-}, [handleScroll]); // Include handleScroll as a dependency
+}, [lastScrollY]);
 
 
   // Toggle menu visibility on mobile
