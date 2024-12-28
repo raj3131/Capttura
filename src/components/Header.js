@@ -20,12 +20,13 @@ function Header() {
   };
 
   // Adding the scroll event listener on component mount
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]);
+ useEffect(() => {
+  window.addEventListener('scroll', handleScroll);
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, [handleScroll]); // Include handleScroll as a dependency
+
 
   // Toggle menu visibility on mobile
   const toggleMenu = () => {
