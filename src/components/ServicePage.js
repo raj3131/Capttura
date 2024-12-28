@@ -168,28 +168,31 @@ const serviceImages = {
     image70,
   ],
 };
-
 function ServicePage() {
   const { serviceId } = useParams();
   const images = serviceImages[serviceId] || [];
   const [modalImage, setModalImage] = useState(null);
 
-  const openModal = (src) => {
-    setModalImage(src);
-  };
-
-  const closeModal = () => {
-    setModalImage(null);
-  };
+  const openModal = (src) => setModalImage(src);
+  const closeModal = () => setModalImage(null);
 
   return (
     <div className="service-page">
       <h1>{serviceId.replace('-', ' ')}</h1>
+
+      {/* Masonry Gallery */}
       <div className="masonry-gallery">
         {images.length > 0 ? (
           images.map((src, index) => (
-            <div key={index} className="masonry-item" onClick={() => openModal(src)}>
-              <img src={src} alt={`Service Image ${index + 1}`} />
+            <div
+              key={index}
+              className="masonry-item"
+              onClick={() => openModal(src)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => e.key === 'Enter' && openModal(src)}
+            >
+              <img src={src} alt={`Gallery image ${index + 1}`} />
             </div>
           ))
         ) : (
@@ -197,37 +200,87 @@ function ServicePage() {
         )}
       </div>
 
+      {/* Modal View */}
       {modalImage && (
-        <div className="modal" onClick={closeModal}>
-          <span className="close">&times;</span>
-          <img className="modal-content" src={modalImage} alt="Enlarged View" />
+        <div
+          className="modal"
+          onClick={closeModal}
+          role="dialog"
+          aria-modal="true"
+          tabIndex={-1}
+        >
+          <span className="close" onClick={closeModal} role="button" tabIndex={0}>&times;</span>
+          <img className="modal-content" src={modalImage} alt="Enlarged view of the selected gallery image" />
         </div>
       )}
 
+      {/* Booking Section */}
       <section className="booking-section">
         <h2>Book This Service</h2>
         <form action="/submit-booking" method="POST">
-          <div className="form-group">
-            <label htmlFor="name">Full Name:</label>
-            <input type="text" id="name" name="name" required placeholder="Enter your full name" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" required placeholder="Enter your email" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="details">Additional Details:</label>
-            <textarea id="details" name="details" rows="4" placeholder="Any additional information or requests?" />
-          </div>
+          <FormInput
+            id="name"
+            type="text"
+            label="Full Name"
+            placeholder="Enter your full name"
+            required
+          />
+          <FormInput
+            id="email"
+            type="email"
+            label="Email"
+            placeholder="Enter your email"
+            required
+          />
+          <FormInput
+            id="phone"
+            type="tel"
+            label="Phone Number"
+            placeholder="Enter your phone number"
+            required
+          />
+          <FormTextArea
+            id="details"
+            label="Additional Details"
+            placeholder="Any additional information or requests?"
+            rows={4}
+          />
           <button type="submit">Book Now</button>
         </form>
       </section>
     </div>
   );
 }
+
+/**
+ * Reusable Input Component
+ */
+const FormInput = ({ id, type, label, placeholder, required }) => (
+  <div className="form-group">
+    <label htmlFor={id}>{label}:</label>
+    <input
+      type={type}
+      id={id}
+      name={id}
+      required={required}
+      placeholder={placeholder}
+    />
+  </div>
+);
+
+/**
+ * Reusable TextArea Component
+ */
+const FormTextArea = ({ id, label, placeholder, rows }) => (
+  <div className="form-group">
+    <label htmlFor={id}>{label}:</label>
+    <textarea
+      id={id}
+      name={id}
+      rows={rows}
+      placeholder={placeholder}
+    />
+  </div>
+);
 
 export default ServicePage;
