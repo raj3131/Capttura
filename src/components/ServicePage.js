@@ -219,7 +219,7 @@ function ServicePage() {
       )}
 
       {/* Booking Section */}
-      <section className="booking-section">
+      {/* <section className="booking-section">
         <h2>Book This Service</h2>
         <form action="/submit-booking" method="POST">
           <FormInput
@@ -251,7 +251,7 @@ function ServicePage() {
           />
           <button type="submit">Book Now</button>
         </form>
-      </section>
+      </section> */}
     </div>
   );
 }

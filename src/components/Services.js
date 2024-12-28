@@ -1,6 +1,5 @@
 import React from 'react';
 import './Services.css';
-// Import your images
 import preWeddingImage from '../Images/Lavish pre-wedding shoot/Lavish pre-wedding shoot_1.jpg'; // Example image
 import beachPortraitsImage from '../Images/Beach Portraits/Beach Portraits_1.jpg';
 import destinationWeddingImage from '../Images/Destination wedding/Destination wedding_1.jpg';
@@ -35,7 +34,7 @@ function Services() {
               <h3>{service.title}</h3>
               <p>{service.description}</p>
               <p><strong>{service.price}</strong></p>
-              <button>Book Now</button>
+              {/* <button>Book Now</button> */}
             </div>
           </div>
         ))}
