@@ -118,7 +118,7 @@ nav ul li a:hover {
     text-align: center;
     background: rgba(255, 0, 0, 0.7); /* Red background for dropdown */
     position: absolute;
-    top: 60px;
+    top: 70px;
     left: 0;
     padding: 20px 0;
     z-index: 999;

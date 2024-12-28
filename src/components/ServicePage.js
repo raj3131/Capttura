@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './ServicePage.css';
 
@@ -93,7 +93,7 @@ const serviceImages = {
     image9,
     image10,
   ],
-  'beach-portraits': [
+  'beach-portraits_1': [
     image11,
     image12,
     image13,
@@ -168,7 +168,12 @@ const serviceImages = {
     image70,
   ],
 };
+
 function ServicePage() {
+  useEffect(() => {   
+    window.scrollTo(0, 0);
+  }, []);
+  
   const { serviceId } = useParams();
   const images = serviceImages[serviceId] || [];
   const [modalImage, setModalImage] = useState(null);
@@ -192,7 +197,7 @@ function ServicePage() {
               tabIndex={0}
               onKeyDown={(e) => e.key === 'Enter' && openModal(src)}
             >
-              <img src={src} alt={`Gallery image ${index + 1}`} />
+              <img src={src} alt={`Gallery item ${index + 1}`} />
             </div>
           ))
         ) : (
@@ -200,7 +205,6 @@ function ServicePage() {
         )}
       </div>
 
-      {/* Modal View */}
       {modalImage && (
         <div
           className="modal"
@@ -210,7 +214,7 @@ function ServicePage() {
           tabIndex={-1}
         >
           <span className="close" onClick={closeModal} role="button" tabIndex={0}>&times;</span>
-          <img className="modal-content" src={modalImage} alt="Enlarged view of the selected gallery image" />
+          <img className="modal-content" src={modalImage} alt="Enlarged view" />
         </div>
       )}
 
