@@ -21,8 +21,6 @@ import image15 from '../Images/Beach Portraits/Beach Portraits_5.jpg';
 import image16 from '../Images/Beach Portraits/Beach Portraits_6.jpg';
 import image17 from '../Images/Beach Portraits/Beach Portraits_7.jpg';
 
-
-
 import image18 from '../Images/Destination wedding/Destination wedding_1.jpg';
 import image19 from '../Images/Destination wedding/Destination wedding_2.jpg';
 import image20 from '../Images/Destination wedding/Destination wedding_3.jpg';
@@ -34,7 +32,6 @@ import image25 from '../Images/Destination wedding/Destination wedding_8.jpg';
 import image26 from '../Images/Destination wedding/Destination wedding_9.jpg';
 import image27 from '../Images/Destination wedding/Destination wedding_10.jpg';
 
-
 import image28 from '../Images/Food photography/Food photography_1.jpg';
 import image29 from '../Images/Food photography/Food photography_2.jpg';
 import image30 from '../Images/Food photography/Food photography_3.jpg';
@@ -43,7 +40,6 @@ import image32 from '../Images/Food photography/Food photography_5.jpg';
 import image33 from '../Images/Food photography/Food photography_6.jpg';
 import image34 from '../Images/Food photography/Food photography_7.jpg';
 import image35 from '../Images/Food photography/Food photography_8.jpg';
-
 
 import image36 from '../Images/Christian Wedding/Christian Wedding_1.jpg';
 import image37 from '../Images/Christian Wedding/Christian Wedding_2.jpg';
@@ -84,9 +80,6 @@ import image68 from '../Images/Sports car photography/Sports car photography_4.j
 import image69 from '../Images/Sports car photography/Sports car photography_5.jpg';
 import image70 from '../Images/Sports car photography/Sports car photography_6.jpg';
 
-
-
-
 const serviceImages = {
   'pre-wedding': [
     image1,
@@ -100,7 +93,7 @@ const serviceImages = {
     image9,
     image10,
   ],
-  'beach-portraits_1': [
+  'beach-portraits': [
     image11,
     image12,
     image13,
@@ -108,7 +101,6 @@ const serviceImages = {
     image15,
     image16,
     image17,
-    
   ],
   'destination-wedding': [
     image18,
@@ -120,7 +112,7 @@ const serviceImages = {
     image24,
     image25,
     image26,
-    image27
+    image27,
   ],
   'food-photography': [
     image28,
@@ -153,7 +145,7 @@ const serviceImages = {
     image51,
     image52,
     image53,
-    image54,   
+    image54,
   ],
   'urban-portraits': [
     image55,
@@ -166,16 +158,14 @@ const serviceImages = {
     image62,
     image63,
     image64,
-    
   ],
   'sports-car': [
-  image65,
-  image66,
-  image67,
-  image68,
-  image69,
-  image70,
-
+    image65,
+    image66,
+    image67,
+    image68,
+    image69,
+    image70,
   ],
 };
 
